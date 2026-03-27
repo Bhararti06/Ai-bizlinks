@@ -1,0 +1,101 @@
+﻿
+> community-portal-selenium-tests@1.0.0 test:naming
+> mocha tests/namingConventionFlow.test.js --timeout 150000
+
+
+
+  Suite F: Naming Convention Flow
+NAMING TEST 1: Super Admin login...
+DEBUG: Attempting successful login for superadmin@bizlinks.in...
+DEBUG: Entering email: superadmin@bizlinks.in
+DEBUG: Continue button not present/visible, skipping.
+DEBUG: Entering password...
+DEBUG: Waiting for dashboard element...
+NAMING TEST 1: Creating organization...
+NAMING TEST 1: Login URL ΓåÆ http://localhost:3000/login?org=naming-1771839424403
+NAMING TEST 1: Admin sets password...
+DEBUG: Setting up password for naming_admin_1771839424403@example.com
+DEBUG: Entering email: naming_admin_1771839424403@example.com
+DEBUG: Waiting for post-password redirect...
+DEBUG: Redirected to: http://localhost:3000/naming-1771839424403/admin/dashboard
+NAMING TEST 1 PASSED: Admin logged in to dashboard.
+    Γ£ö 1. Setup: Create Organization and Admin Login (35150ms)
+NAMING TEST 2: Checking default tab names on dashboard...
+DEBUG: Verifying default names restored
+DEBUG: Verifying tab name: Chapters
+DEBUG: Verifying tab name: Categories
+NAMING TEST 2 PASSED: Default names verified.
+    Γ£ö 2. Naming: Verify Initial Default Tab Names (2205ms)
+NAMING TEST 3: Navigating to Naming Convention settings...
+DEBUG: Navigating to Naming Convention
+DEBUG: Current URL after Naming click: http://localhost:3000/naming-1771839424403
+NAMING TEST 3: Filling custom names...
+DEBUG: Setting custom name for chapter: Region
+DEBUG: Failed to find chapter input. URL: http://localhost:3000/naming-1771839424403
+DEBUG: Found 1 inputs on page.
+DEBUG: - Input name='', placeholder='Search posts, members, content...'
+    1) 3. Naming: Apply Custom Naming (Regions, Industries, Tiers)
+NAMING TEST 4: Checking Dashboard tabs for custom names...
+DEBUG: Verifying tab name: Industries
+DEBUG: Verifying tab name: Regions
+NAMING TEST 4: Industry tab visible: false
+NAMING TEST 4: Region tab visible: false
+    2) 4. Naming: Verify Sidebar and Dashboard reflect Custom Names
+NAMING TEST 5: Refreshing page...
+DEBUG: Verifying tab name: Industries
+    3) 5. Naming: Verify Custom Naming Persists after Refresh
+NAMING TEST 6: Navigating to Naming Convention to reset...
+DEBUG: Navigating to Naming Convention
+DEBUG: Current URL after Naming click: http://localhost:3000/naming-1771839424403
+DEBUG: Resetting naming convention
+    4) 6. Naming: Reset to Defaults and Verify Restoration
+
+
+  2 passing (1m)
+  4 failing
+
+  1) Suite F: Naming Convention Flow
+       3. Naming: Apply Custom Naming (Regions, Industries, Tiers):
+     InvalidSelectorError: invalid selector: Unable to locate an element with the xpath expression //input[@name='chapter' or @placeholder*='Chapter'] because of the following error:
+SyntaxError: Failed to execute 'evaluate' on 'Document': The string '//input[@name='chapter' or @placeholder*='Chapter']' is not a valid XPath expression.
+  (Session info: chrome=145.0.7632.75)
+      at Object.throwDecodedError (node_modules\selenium-webdriver\lib\error.js:523:15)
+      at parseHttpResponse (node_modules\selenium-webdriver\lib\http.js:524:13)
+      at Executor.execute (node_modules\selenium-webdriver\lib\http.js:456:28)
+      at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+      at async Driver.execute (node_modules\selenium-webdriver\lib\webdriver.js:745:17)
+      at async Driver.findElements (node_modules\selenium-webdriver\lib\webdriver.js:1073:17)
+
+  2) Suite F: Naming Convention Flow
+       4. Naming: Verify Sidebar and Dashboard reflect Custom Names:
+
+      At least one custom tab name should be visible on dashboard
+      + expected - actual
+
+      -false
+      +true
+      
+      at Context.<anonymous> (tests\namingConventionFlow.test.js:147:110)
+      at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+
+  3) Suite F: Naming Convention Flow
+       5. Naming: Verify Custom Naming Persists after Refresh:
+
+      Custom names should persist after page refresh
+      + expected - actual
+
+      -false
+      +true
+      
+      at Context.<anonymous> (tests\namingConventionFlow.test.js:170:84)
+      at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+
+  4) Suite F: Naming Convention Flow
+       6. Naming: Reset to Defaults and Verify Restoration:
+     TimeoutError: Waiting for element to be located By(xpath, //button[contains(., 'Reset') or contains(., 'Delete')])
+Wait timed out after 10306ms
+      at C:\Users\user\.gemini\antigravity\scratch\community-portal\selenium-tests\node_modules\selenium-webdriver\lib\webdriver.js:929:22
+      at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+
+
+

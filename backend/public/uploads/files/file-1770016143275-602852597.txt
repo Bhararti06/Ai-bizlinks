@@ -1,0 +1,5 @@
+/// 
+1] Image not loaded on home page
+2] Comments not displayed on post
+3] if i want to like my own post , its not working 
+4] click on comments it shows application error on - home page

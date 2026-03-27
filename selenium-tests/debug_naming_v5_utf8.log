@@ -1,0 +1,90 @@
+﻿
+> community-portal-selenium-tests@1.0.0 test:naming
+> mocha tests/namingConventionFlow.test.js --timeout 150000
+
+
+
+  Suite F: Naming Convention Flow
+NAMING TEST 1: Super Admin login...
+DEBUG: Attempting successful login for superadmin@bizlinks.in...
+DEBUG: Entering email: superadmin@bizlinks.in
+DEBUG: Continue button not present/visible, skipping.
+DEBUG: Entering password...
+DEBUG: Waiting for dashboard element...
+NAMING TEST 1: Creating organization...
+NAMING TEST 1: Login URL ΓåÆ http://localhost:3000/login?org=naming-1771841806298
+NAMING TEST 1: Admin sets password...
+DEBUG: Setting up password for naming_admin_1771841806298@example.com
+DEBUG: Entering email: naming_admin_1771841806298@example.com
+DEBUG: Waiting for post-password redirect...
+DEBUG: Redirected to: http://localhost:3000/naming-1771841806298/admin/dashboard
+NAMING TEST 1 PASSED: Admin logged in to dashboard.
+    Γ£ö 1. Setup: Create Organization and Admin Login (35235ms)
+NAMING TEST 2: Checking default tab names on dashboard...
+DEBUG: Verifying default names restored
+DEBUG: Verifying tab name: Chapters
+DEBUG: Verifying tab name: Categories
+NAMING TEST 2 PASSED: Default names verified.
+    Γ£ö 2. Naming: Verify Initial Default Tab Names (2133ms)
+NAMING TEST 3: Navigating to Naming Convention settings...
+DEBUG: Navigating to Naming Convention
+DEBUG: Current URL after Naming click: http://localhost:3000/naming-1771841806298/admin/naming-convention
+NAMING TEST 3: Filling custom names...
+DEBUG: Setting custom name for chapter: Region
+DEBUG: Setting custom name for category: Industry
+DEBUG: Setting custom name for plan: Tier
+DEBUG: Setting custom name for meetings: Session
+NAMING TEST 3: Saving convention...
+DEBUG: Saving naming convention
+NAMING TEST 3 PASSED: Custom naming applied and saved.
+    Γ£ö 3. Naming: Apply Custom Naming (Regions, Industries, Tiers) (7061ms)
+NAMING TEST 4: Checking Dashboard tabs for custom names...
+DEBUG: Verifying tab name: Industries
+DEBUG: Verifying tab name: Regions
+NAMING TEST 4: Industry tab visible: false
+NAMING TEST 4: Region tab visible: false
+    1) 4. Naming: Verify Sidebar and Dashboard reflect Custom Names
+NAMING TEST 5: Refreshing page...
+DEBUG: Verifying tab name: Industries
+    2) 5. Naming: Verify Custom Naming Persists after Refresh
+NAMING TEST 6: Navigating to Naming Convention to reset...
+DEBUG: Navigating to Naming Convention
+DEBUG: Current URL after Naming click: http://localhost:3000/naming-1771841806298/admin/naming-convention
+DEBUG: Resetting naming convention
+NAMING TEST 6: Verifying default names are back on dashboard...
+DEBUG: Verifying default names restored
+DEBUG: Verifying tab name: Chapters
+DEBUG: Verifying tab name: Categories
+NAMING TEST 6 PASSED: Naming convention reset successfully.
+    Γ£ö 6. Naming: Reset to Defaults and Verify Restoration (13665ms)
+
+
+  4 passing (1m)
+  2 failing
+
+  1) Suite F: Naming Convention Flow
+       4. Naming: Verify Sidebar and Dashboard reflect Custom Names:
+
+      At least one custom tab name should be visible on dashboard
+      + expected - actual
+
+      -false
+      +true
+      
+      at Context.<anonymous> (tests\namingConventionFlow.test.js:147:110)
+      at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+
+  2) Suite F: Naming Convention Flow
+       5. Naming: Verify Custom Naming Persists after Refresh:
+
+      Custom names should persist after page refresh
+      + expected - actual
+
+      -false
+      +true
+      
+      at Context.<anonymous> (tests\namingConventionFlow.test.js:170:84)
+      at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+
+
+

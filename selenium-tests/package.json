@@ -1,0 +1,27 @@
+{
+  "name": "community-portal-selenium-tests",
+  "version": "1.0.0",
+  "description": "Selenium automated testing suite for Community Portal",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha tests/**/*.test.js --timeout 60000",
+    "test:superadmin": "mocha tests/superAdmin.test.js --timeout 60000",
+    "test:master": "mocha tests/master_lifecycle.test.js --timeout 120000",
+    "test:admin": "mocha tests/orgAdmin.test.js --timeout 60000",
+    "test:member": "mocha tests/member.test.js --timeout 60000",
+    "test:onboarding": "mocha tests/onboardingFlow.test.js --timeout 120000",
+    "test:approval": "mocha tests/approvalFlow.test.js --timeout 120000",
+    "test:advanced": "mocha tests/advancedAdminFlows.test.js --timeout 180000",
+    "test:login-validation": "mocha tests/loginValidation.test.js --timeout 150000",
+    "test:advancedflow": "mocha tests/advancedFlow.test.js --timeout 180000",
+    "test:gallery": "mocha tests/orgGalleryFlow.test.js --timeout 180000",
+    "test:orgadmin": "mocha tests/createOrgAdminFlow.test.js --timeout 180000",
+    "test:naming": "mocha tests/namingConventionFlow.test.js --timeout 150000"
+  },
+  "dependencies": {
+    "selenium-webdriver": "^4.10.0",
+    "mocha": "^10.2.0",
+    "chai": "^4.3.7",
+    "dotenv": "^16.3.1"
+  }
+}
